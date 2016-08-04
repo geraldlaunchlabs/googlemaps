@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "SWRevealViewController.h"
 
 //#import "UIViewController+JASidePanel.h"
 
@@ -39,6 +39,11 @@
 //    marker.title = @"Cebu";
 //    marker.snippet = @"Philippines";
 //    marker.map = mapView;
+    
+    _menu.target = self.revealViewController;
+    _menu.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:(self.revealViewController.panGestureRecognizer)];
+    
     
     self.GMS.delegate = self;
     self.GMS.myLocationEnabled = YES;

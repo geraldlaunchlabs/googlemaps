@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ibm-zc-uXi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DXI-BH-CTe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="iM2-xy-gJD">
+            <objects>
+                <viewController id="DXI-BH-CTe" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="31O-oB-BXA"/>
+                        <viewControllerLayoutGuide type="bottom" id="8mt-In-xYO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E8M-TN-gLQ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Ibm-zc-uXi" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="sGP-yt-lmy"/>
+                        <segue destination="RCi-dx-3Ad" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="rZh-Al-3IR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4q2-1V-Vor" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-859.5" y="-1007"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="wVh-YG-cc4">
+            <objects>
+                <tableViewController id="RCi-dx-3Ad" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="red-un-Vrv">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UMI-Z2-zfg">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMI-Z2-zfg" id="1p5-Sa-lns">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RCi-dx-3Ad" id="s06-Ch-NCe"/>
+                            <outlet property="delegate" destination="RCi-dx-3Ad" id="yuz-pB-111"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDN-SG-XYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-75" y="-1007"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XZO-PL-Uwy">
             <objects>
@@ -19,7 +65,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcA-eY-vDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-607" y="-98"/>
+            <point key="canvasLocation" x="-859.5" y="-259"/>
         </scene>
         <!--Google Map-->
         <scene sceneID="tne-QT-ifu">
@@ -53,11 +99,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="GMS" destination="hJd-QG-4rx" id="xgC-dE-10w"/>
+                        <outlet property="menu" destination="U0w-59-Oak" id="5up-o7-SUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="-99"/>
+            <point key="canvasLocation" x="-66" y="-259"/>
         </scene>
     </scenes>
     <resources>

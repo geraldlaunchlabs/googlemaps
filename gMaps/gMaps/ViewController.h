@@ -14,6 +14,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet GMSMapView *GMS;
+@property (weak,nonatomic) IBOutlet UIBarButtonItem * menu;
 
 @end
 

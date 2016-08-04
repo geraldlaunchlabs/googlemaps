@@ -5,17 +5,24 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "36BD1F26A565CB5207E5050D92BFFEBFF66DF891" : 0,
-    "61BE18A5930DA2ABE9DDA67B3F71C81D12CD46A9" : 0
+    "61BE18A5930DA2ABE9DDA67B3F71C81D12CD46A9" : 0,
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "097E9ABC-8082-4138-9411-395F31A3FD88",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "36BD1F26A565CB5207E5050D92BFFEBFF66DF891" : "googlemaps\/",
-    "61BE18A5930DA2ABE9DDA67B3F71C81D12CD46A9" : "JASidePanels\/"
+    "61BE18A5930DA2ABE9DDA67B3F71C81D12CD46A9" : "JASidePanels\/",
+    "01529694042D8C98B30DC19F4D4370A306884FE4" : "SWRevealViewController\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "gMaps",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "gMaps\/gMaps.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/John-Lluch\/SWRevealViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01529694042D8C98B30DC19F4D4370A306884FE4"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:geraldlaunchlabs\/googlemaps.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

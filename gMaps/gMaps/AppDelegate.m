@@ -9,15 +9,6 @@
 #import "AppDelegate.h"
 @import GoogleMaps;
 
-
-#import "JAAppDelegate.h"
-
-#import "JASidePanelController.h"
-#import "JACenterViewController.h"
-#import "JALeftViewController.h"
-#import "JARightViewController.h"
-
-
 @interface AppDelegate ()
 
 @end
@@ -30,17 +21,6 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [GMSServices provideAPIKey:APIKey];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    self.viewController = [[JASidePanelController alloc] init];
-    self.viewController.leftPanel = [[JALeftViewController alloc] init];
-    self.viewController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[[JACenterViewController alloc] init]];
-    self.viewController.rightPanel = [[JARightViewController alloc] init];
-    
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-    
     
     //[GMSPlacesClient provideAPIKey:APIKey];
     

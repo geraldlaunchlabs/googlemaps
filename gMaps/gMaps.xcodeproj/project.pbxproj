@@ -34,6 +34,7 @@
 		6038F3A21D52F8A600E69954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6038F3A11D52F8A600E69954 /* UIKit.framework */; };
 		6038F3A41D53365100E69954 /* AppleUSA1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6038F3A31D53365100E69954 /* AppleUSA1.png */; };
 		6038F3A61D533A6500E69954 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6038F3A51D533A6500E69954 /* menu.png */; };
+		6038F3AE1D53503200E69954 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3AD1D53503200E69954 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		6038F3A11D52F8A600E69954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6038F3A31D53365100E69954 /* AppleUSA1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppleUSA1.png; path = ../../../../Downloads/AppleUSA1.png; sourceTree = "<group>"; };
 		6038F3A51D533A6500E69954 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/menu.png; sourceTree = "<group>"; };
+		6038F3AC1D53502E00E69954 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../SWRevealViewController/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		6038F3AD1D53503200E69954 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 		6038F34D1D52F1C400E69954 /* gMaps */ = {
 			isa = PBXGroup;
 			children = (
+				6038F3AC1D53502E00E69954 /* SWRevealViewController.h */,
+				6038F3AD1D53503200E69954 /* SWRevealViewController.m */,
 				6038F3511D52F1C400E69954 /* AppDelegate.h */,
 				6038F3521D52F1C400E69954 /* AppDelegate.m */,
 				6038F3541D52F1C400E69954 /* ViewController.h */,
@@ -349,6 +354,7 @@
 				6038F3561D52F1C400E69954 /* ViewController.m in Sources */,
 				6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,
+				6038F3AE1D53503200E69954 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
