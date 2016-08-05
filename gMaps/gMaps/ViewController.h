@@ -10,7 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface ViewController : UIViewController<GMSMapViewDelegate,UIScrollViewDelegate>{
-    
+    IBOutlet UIImageView *image;
 }
 
 @property (strong, nonatomic) IBOutlet GMSMapView *GMS;

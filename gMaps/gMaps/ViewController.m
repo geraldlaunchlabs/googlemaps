@@ -44,13 +44,11 @@
     _menu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:(self.revealViewController.panGestureRecognizer)];
     
-    
     self.GMS.delegate = self;
     self.GMS.myLocationEnabled = YES;
     self.GMS.mapType = kGMSTypeNormal;
     self.GMS.settings.compassButton = YES;
     self.GMS.settings.myLocationButton = YES;
-    
     
     // Do any additional setup after loading the view, typically from a nib.
 }
