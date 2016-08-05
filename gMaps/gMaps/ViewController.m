@@ -8,16 +8,22 @@
 
 #import "ViewController.h"
 #import "SWRevealViewController.h"
+@import GooglePlaces;
 
 //#import "UIViewController+JASidePanel.h"
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollHeight;
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    GMSPlacesClient *_placesClient;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

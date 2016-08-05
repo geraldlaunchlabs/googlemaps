@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -16,12 +18,6 @@
                     <view key="view" contentMode="scaleToFill" id="E8M-TN-gLQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-SC-lGS">
-                                <rect key="frame" x="271" y="173" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -33,43 +29,87 @@
             </objects>
             <point key="canvasLocation" x="-859.5" y="-1007"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="wVh-YG-cc4">
             <objects>
-                <tableViewController id="RCi-dx-3Ad" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="red-un-Vrv">
+                <tableViewController id="RCi-dx-3Ad" customClass="NavigationViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="red-un-Vrv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yKh-0u-Sa4">
-                                <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r1" id="iyH-Av-aPm">
+                                <rect key="frame" x="0.0" y="50" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yKh-0u-Sa4" id="DqW-Gp-Sz0">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyH-Av-aPm" id="Mfb-VT-y5j">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gMaps.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZkH-Hr-FIE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gMaps.png" translatesAutoresizingMaskIntoConstraints="NO" id="G46-UA-QvX">
+                                            <rect key="frame" x="8" y="8" width="53" height="53"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="G46-UA-QvX" secondAttribute="height" multiplier="1:1" id="3dW-Jb-ZHa"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google Maps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-kU-fkb">
+                                            <rect key="frame" x="69" y="24" width="110" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ZkH-Hr-FIE" firstAttribute="leading" secondItem="DqW-Gp-Sz0" secondAttribute="leading" id="2U3-8F-vZe"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZkH-Hr-FIE" secondAttribute="bottom" id="5La-Sm-Qlg"/>
-                                        <constraint firstItem="ZkH-Hr-FIE" firstAttribute="top" secondItem="DqW-Gp-Sz0" secondAttribute="top" id="QI1-fA-mra"/>
-                                        <constraint firstAttribute="trailing" secondItem="ZkH-Hr-FIE" secondAttribute="trailing" id="tiS-C5-MD6"/>
+                                        <constraint firstItem="G46-UA-QvX" firstAttribute="top" secondItem="Mfb-VT-y5j" secondAttribute="topMargin" id="26H-ar-28i"/>
+                                        <constraint firstItem="G46-UA-QvX" firstAttribute="leading" secondItem="Mfb-VT-y5j" secondAttribute="leadingMargin" id="M9y-xK-fxg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="G46-UA-QvX" secondAttribute="bottom" id="YGV-1N-Zmw"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="Ibm-zc-uXi" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Zsc-bH-ba1"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UMI-Z2-zfg">
-                                <rect key="frame" x="0.0" y="98" width="600" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r2" id="FSI-P6-2dB">
+                                <rect key="frame" x="0.0" y="120" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMI-Z2-zfg" id="1p5-Sa-lns">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FSI-P6-2dB" id="Ogz-dL-zL8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb.png" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-nR-knK">
+                                            <rect key="frame" x="8" y="8" width="53" height="53"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="HiL-nR-knK" secondAttribute="height" multiplier="1:1" id="sy9-3x-MYM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqY-Xc-o8X">
+                                            <rect key="frame" x="69" y="24" width="82" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HiL-nR-knK" secondAttribute="bottom" id="6U8-EM-NnP"/>
+                                        <constraint firstItem="HiL-nR-knK" firstAttribute="leading" secondItem="Ogz-dL-zL8" secondAttribute="leadingMargin" id="YU7-zQ-r3R"/>
+                                        <constraint firstItem="HiL-nR-knK" firstAttribute="top" secondItem="Ogz-dL-zL8" secondAttribute="topMargin" id="x5l-nW-Eim"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="vK9-8Z-053" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Dtc-qs-WSb"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r3" id="pYC-TU-GhM">
+                                <rect key="frame" x="0.0" y="190" width="600" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pYC-TU-GhM" id="O9W-Oc-hoL">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -80,12 +120,52 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDN-SG-XYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="-1001"/>
+            <point key="canvasLocation" x="-205" y="-1007"/>
+        </scene>
+        <!--Facebook-->
+        <scene sceneID="noo-Ky-69L">
+            <objects>
+                <viewController id="oa8-WF-EUL" customClass="FBViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h1Q-sg-HaD"/>
+                        <viewControllerLayoutGuide type="bottom" id="v8y-cv-vpj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0l5-rH-cqf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Facebook" id="g0p-G6-apF">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="FdM-Z4-HNA"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fbmenu" destination="FdM-Z4-HNA" id="Adx-SB-Shm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vgw-eW-U5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="-229"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="KND-Ju-bbb">
+            <objects>
+                <navigationController id="vK9-8Z-053" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gAd-cJ-PRd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oa8-WF-EUL" kind="relationship" relationship="rootViewController" id="dHy-OZ-HUo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Usy-ak-b77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="-1007"/>
+        </scene>
+        <!--Nav Controller-->
         <scene sceneID="XZO-PL-Uwy">
             <objects>
-                <navigationController id="Ibm-zc-uXi" sceneMemberID="viewController">
+                <navigationController id="Ibm-zc-uXi" customClass="NavController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2hr-Oe-IuT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -96,9 +176,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcA-eY-vDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-859.5" y="-298"/>
+            <point key="canvasLocation" x="-860" y="-229"/>
         </scene>
-        <!--Google Map-->
+        <!--Google Maps-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -115,7 +195,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hJd-QG-4rx" secondAttribute="bottom" id="3xS-wi-5kM"/>
                             <constraint firstAttribute="trailing" secondItem="hJd-QG-4rx" secondAttribute="trailing" id="530-Ma-eST"/>
@@ -124,7 +203,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Google Map" id="qWr-ty-86o">
+                    <navigationItem key="navigationItem" title="Google Maps" id="qWr-ty-86o">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="U0w-59-Oak"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -135,12 +214,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="-977"/>
+            <point key="canvasLocation" x="-197" y="-229"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gMaps.png" width="600" height="288"/>
+        <image name="fb.png" width="1000" height="1000"/>
+        <image name="gMaps.png" width="512" height="512"/>
         <image name="menu.png" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zsc-bH-ba1"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

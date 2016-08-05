@@ -10,4 +10,6 @@
 
 @interface FBViewController : ViewController
 
+@property (weak,nonatomic) IBOutlet UIBarButtonItem * fbmenu;
+
 @end

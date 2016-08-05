@@ -7,6 +7,7 @@
 //
 
 #import "FBViewController.h"
+#import "SWRevealViewController.h"
 
 @interface FBViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _fbmenu.target = self.revealViewController;
+    _fbmenu.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:(self.revealViewController.panGestureRecognizer)];
     // Do any additional setup after loading the view.
 }
 

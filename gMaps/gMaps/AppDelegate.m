@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 @import GoogleMaps;
+@import GooglePlaces;
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
     
     [GMSServices provideAPIKey:APIKey];
     
-    //[GMSPlacesClient provideAPIKey:APIKey];
+    [GMSPlacesClient provideAPIKey:APIKey];
     
     // Override point for customization after application launch.
     return YES;

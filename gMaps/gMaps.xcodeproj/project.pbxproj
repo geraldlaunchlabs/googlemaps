@@ -34,7 +34,15 @@
 		6038F3A21D52F8A600E69954 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6038F3A11D52F8A600E69954 /* UIKit.framework */; };
 		6038F3A41D53365100E69954 /* AppleUSA1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6038F3A31D53365100E69954 /* AppleUSA1.png */; };
 		6038F3A61D533A6500E69954 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6038F3A51D533A6500E69954 /* menu.png */; };
-		6038F3AE1D53503200E69954 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3AD1D53503200E69954 /* SWRevealViewController.m */; };
+		60505B201D544CD6004BC2BF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60505B1F1D544CD6004BC2BF /* SWRevealViewController.m */; };
+		60505B241D5458D3004BC2BF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60505B231D5458D3004BC2BF /* NavigationViewController.m */; };
+		60505B261D547061004BC2BF /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 60505B251D547061004BC2BF /* fb.png */; };
+		60505B281D5477D2004BC2BF /* gMaps.png in Resources */ = {isa = PBXBuildFile; fileRef = 60505B271D5477D1004BC2BF /* gMaps.png */; };
+		60505B2E1D549291004BC2BF /* FBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60505B2D1D549291004BC2BF /* FBViewController.m */; };
+		60505B301D54A613004BC2BF /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60505B2F1D54A613004BC2BF /* GooglePlaces.framework */; };
+		60505B321D54A681004BC2BF /* GooglePlacePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60505B311D54A681004BC2BF /* GooglePlacePicker.framework */; };
+		60505B341D54A6F6004BC2BF /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */; };
+		60505B361D54A74B004BC2BF /* GooglePlacePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +98,18 @@
 		6038F3A11D52F8A600E69954 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6038F3A31D53365100E69954 /* AppleUSA1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppleUSA1.png; path = ../../../../Downloads/AppleUSA1.png; sourceTree = "<group>"; };
 		6038F3A51D533A6500E69954 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/menu.png; sourceTree = "<group>"; };
-		6038F3AC1D53502E00E69954 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../SWRevealViewController/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
-		6038F3AD1D53503200E69954 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../SWRevealViewController/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		60505B1F1D544CD6004BC2BF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		60505B211D544CDF004BC2BF /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		60505B221D5458D3004BC2BF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = ../NavigationViewController.h; sourceTree = "<group>"; };
+		60505B231D5458D3004BC2BF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = ../NavigationViewController.m; sourceTree = "<group>"; };
+		60505B251D547061004BC2BF /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		60505B271D5477D1004BC2BF /* gMaps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gMaps.png; sourceTree = "<group>"; };
+		60505B2C1D549291004BC2BF /* FBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBViewController.h; sourceTree = "<group>"; };
+		60505B2D1D549291004BC2BF /* FBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBViewController.m; sourceTree = "<group>"; };
+		60505B2F1D54A613004BC2BF /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		60505B311D54A681004BC2BF /* GooglePlacePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlacePicker.framework; sourceTree = "<group>"; };
+		60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +118,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6038F3A21D52F8A600E69954 /* UIKit.framework in Frameworks */,
+				60505B321D54A681004BC2BF /* GooglePlacePicker.framework in Frameworks */,
 				6038F3A01D52F89800E69954 /* SystemConfiguration.framework in Frameworks */,
 				6038F39E1D52F88700E69954 /* QuartzCore.framework in Frameworks */,
 				6038F39C1D52F87F00E69954 /* OpenGLES.framework in Frameworks */,
+				60505B301D54A613004BC2BF /* GooglePlaces.framework in Frameworks */,
 				6038F39A1D52F87600E69954 /* libz.tbd in Frameworks */,
 				6038F3981D52F86600E69954 /* libc++.tbd in Frameworks */,
 				6038F3961D52F85200E69954 /* ImageIO.framework in Frameworks */,
@@ -138,8 +158,14 @@
 		6038F3421D52F1C400E69954 = {
 			isa = PBXGroup;
 			children = (
+				60505B271D5477D1004BC2BF /* gMaps.png */,
+				60505B251D547061004BC2BF /* fb.png */,
 				6038F3A51D533A6500E69954 /* menu.png */,
 				6038F3A31D53365100E69954 /* AppleUSA1.png */,
+				60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */,
+				60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */,
+				60505B311D54A681004BC2BF /* GooglePlacePicker.framework */,
+				60505B2F1D54A613004BC2BF /* GooglePlaces.framework */,
 				6038F3A11D52F8A600E69954 /* UIKit.framework */,
 				6038F39F1D52F89800E69954 /* SystemConfiguration.framework */,
 				6038F39D1D52F88700E69954 /* QuartzCore.framework */,
@@ -177,12 +203,16 @@
 		6038F34D1D52F1C400E69954 /* gMaps */ = {
 			isa = PBXGroup;
 			children = (
-				6038F3AC1D53502E00E69954 /* SWRevealViewController.h */,
-				6038F3AD1D53503200E69954 /* SWRevealViewController.m */,
+				60505B211D544CDF004BC2BF /* SWRevealViewController.h */,
+				60505B1F1D544CD6004BC2BF /* SWRevealViewController.m */,
+				60505B221D5458D3004BC2BF /* NavigationViewController.h */,
+				60505B231D5458D3004BC2BF /* NavigationViewController.m */,
 				6038F3511D52F1C400E69954 /* AppDelegate.h */,
 				6038F3521D52F1C400E69954 /* AppDelegate.m */,
 				6038F3541D52F1C400E69954 /* ViewController.h */,
 				6038F3551D52F1C400E69954 /* ViewController.m */,
+				60505B2C1D549291004BC2BF /* FBViewController.h */,
+				60505B2D1D549291004BC2BF /* FBViewController.m */,
 				6038F3571D52F1C400E69954 /* Main.storyboard */,
 				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
 				6038F35C1D52F1C400E69954 /* LaunchScreen.storyboard */,
@@ -322,10 +352,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6038F3A41D53365100E69954 /* AppleUSA1.png in Resources */,
+				60505B261D547061004BC2BF /* fb.png in Resources */,
 				6038F35E1D52F1C400E69954 /* LaunchScreen.storyboard in Resources */,
 				6038F3A61D533A6500E69954 /* menu.png in Resources */,
+				60505B281D5477D2004BC2BF /* gMaps.png in Resources */,
 				6038F35B1D52F1C400E69954 /* Assets.xcassets in Resources */,
 				6038F3591D52F1C400E69954 /* Main.storyboard in Resources */,
+				60505B341D54A6F6004BC2BF /* GooglePlaces.bundle in Resources */,
+				60505B361D54A74B004BC2BF /* GooglePlacePicker.bundle in Resources */,
 				6038F3881D52F78300E69954 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,8 +387,10 @@
 			files = (
 				6038F3561D52F1C400E69954 /* ViewController.m in Sources */,
 				6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */,
+				60505B2E1D549291004BC2BF /* FBViewController.m in Sources */,
+				60505B241D5458D3004BC2BF /* NavigationViewController.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,
-				6038F3AE1D53503200E69954 /* SWRevealViewController.m in Sources */,
+				60505B201D544CD6004BC2BF /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +540,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gMaps/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchlabs.gMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -520,7 +556,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = gMaps/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchlabs.gMaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
