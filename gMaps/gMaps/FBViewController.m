@@ -20,6 +20,7 @@
     _fbmenu.target = self.revealViewController;
     _fbmenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:(self.revealViewController.panGestureRecognizer)];
+
     // Do any additional setup after loading the view.
 }
 

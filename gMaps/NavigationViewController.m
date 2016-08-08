@@ -10,8 +10,6 @@
 #import "SWRevealViewController.h"
 #import "FBViewController.h"
 #import "ViewController.h"
-//@import GooglePlaces;
-//@import GooglePlacePicker;
 
 @interface NavigationViewController ()
 
@@ -19,9 +17,7 @@
 
 @implementation NavigationViewController {
     NSArray *menu;
-//    GMSPlacesClient *_placesClient;
-//    GMSPlacePicker *_placePicker;
-//    GMSPlace *place;
+    NSString *cellIdentifier;
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -42,7 +38,7 @@
     [super viewDidLoad];
 //    _placesClient = [GMSPlacesClient sharedClient];
     
-    menu = @[@"r1",@"r2"];
+    menu = @[@"r1",@"r2",@"r3"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +57,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = [menu objectAtIndex:indexPath.row];
+    cellIdentifier = [menu objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
