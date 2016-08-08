@@ -203,12 +203,12 @@
 		6038F34D1D52F1C400E69954 /* gMaps */ = {
 			isa = PBXGroup;
 			children = (
+				6038F3511D52F1C400E69954 /* AppDelegate.h */,
+				6038F3521D52F1C400E69954 /* AppDelegate.m */,
 				60505B211D544CDF004BC2BF /* SWRevealViewController.h */,
 				60505B1F1D544CD6004BC2BF /* SWRevealViewController.m */,
 				60505B221D5458D3004BC2BF /* NavigationViewController.h */,
 				60505B231D5458D3004BC2BF /* NavigationViewController.m */,
-				6038F3511D52F1C400E69954 /* AppDelegate.h */,
-				6038F3521D52F1C400E69954 /* AppDelegate.m */,
 				6038F3541D52F1C400E69954 /* ViewController.h */,
 				6038F3551D52F1C400E69954 /* ViewController.m */,
 				60505B2C1D549291004BC2BF /* FBViewController.h */,

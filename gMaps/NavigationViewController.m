@@ -9,6 +9,9 @@
 #import "NavigationViewController.h"
 #import "SWRevealViewController.h"
 #import "FBViewController.h"
+#import "ViewController.h"
+//@import GooglePlaces;
+//@import GooglePlacePicker;
 
 @interface NavigationViewController ()
 
@@ -16,23 +19,30 @@
 
 @implementation NavigationViewController {
     NSArray *menu;
+//    GMSPlacesClient *_placesClient;
+//    GMSPlacePicker *_placePicker;
+//    GMSPlace *place;
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-//    // configure the destination view controller:
-//    if ( [sender isKindOfClass:[UITableViewCell class]] )
-//    {
-//        UITableViewCell* c = [(NavigationViewController *)sender cell];
-//        UINavigationController *navController = segue.destinationViewController;
-//        FBViewController* fb = [navController childViewControllers].firstObject;
-//    }
+    // configure the destination view controller:
+    if ( [sender isKindOfClass:[UITableViewCell class]] )
+    {
+        UINavigationController *navController = segue.destinationViewController;
+        ViewController* vc = [navController childViewControllers].firstObject;
+        if ( [vc isKindOfClass:[ViewController class]] )
+        {
+            vc.search = @"YES";
+        }
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    _placesClient = [GMSPlacesClient sharedClient];
     
-    menu = @[@"r1",@"r2",@"r3"];
+    menu = @[@"r1",@"r2"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,5 +91,27 @@
     
     // TODO call whatever function you need to visually restore
 }
+
+//- (IBAction)getCurrentPlace:(UIButton *)sender {
+//    [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
+//        if (error != nil) {
+//            NSLog(@"Pick Place error %@", [error localizedDescription]);
+//            return;
+//        }
+//        
+//        NSString *nameLabel =  @"No current place";
+//        NSString *addressLabel = @"";
+//        
+//        if (placeLikelihoodList != nil) {
+//            place = [[[placeLikelihoodList likelihoods] firstObject] place];
+//            if (place != nil) {
+//                nameLabel = place.name;
+//                addressLabel = [[place.formattedAddress componentsSeparatedByString:@", "]
+//                                          componentsJoinedByString:@"\n"];
+//            }
+//        }
+//    }];
+//}
+
 
 @end

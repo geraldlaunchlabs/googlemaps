@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+@import GooglePlaces;
+@import GooglePlacePicker;
 
 @interface ViewController : UIViewController<GMSMapViewDelegate,UIScrollViewDelegate>{
     IBOutlet UIImageView *image;
@@ -15,6 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet GMSMapView *GMS;
 @property (weak,nonatomic) IBOutlet UIBarButtonItem * menu;
+@property (strong, nonatomic) NSString *search;
 
 @end
 

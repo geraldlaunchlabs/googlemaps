@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r1" id="iyH-Av-aPm">
                                 <rect key="frame" x="0.0" y="50" width="600" height="70"/>
@@ -68,48 +68,29 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="Ibm-zc-uXi" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Zsc-bH-ba1"/>
+                                    <segue destination="Ibm-zc-uXi" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="lMp-jD-hTe"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r2" id="FSI-P6-2dB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r2" textLabel="NjC-f9-Zpq" style="IBUITableViewCellStyleDefault" id="d2R-7J-Jfj">
                                 <rect key="frame" x="0.0" y="120" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FSI-P6-2dB" id="Ogz-dL-zL8">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d2R-7J-Jfj" id="Aym-K3-oC0">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb.png" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-nR-knK">
-                                            <rect key="frame" x="8" y="8" width="53" height="53"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="HiL-nR-knK" secondAttribute="height" multiplier="1:1" id="sy9-3x-MYM"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqY-Xc-o8X">
-                                            <rect key="frame" x="69" y="24" width="82" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Search Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NjC-f9-Zpq">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="69"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                             <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HiL-nR-knK" secondAttribute="bottom" id="6U8-EM-NnP"/>
-                                        <constraint firstItem="HiL-nR-knK" firstAttribute="leading" secondItem="Ogz-dL-zL8" secondAttribute="leadingMargin" id="YU7-zQ-r3R"/>
-                                        <constraint firstItem="HiL-nR-knK" firstAttribute="top" secondItem="Ogz-dL-zL8" secondAttribute="topMargin" id="x5l-nW-Eim"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="vK9-8Z-053" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Dtc-qs-WSb"/>
+                                    <segue destination="Ibm-zc-uXi" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Yuv-OH-ZDA"/>
                                 </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r3" id="pYC-TU-GhM">
-                                <rect key="frame" x="0.0" y="190" width="600" height="70"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pYC-TU-GhM" id="O9W-Oc-hoL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -120,52 +101,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDN-SG-XYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205" y="-1007"/>
-        </scene>
-        <!--Facebook-->
-        <scene sceneID="noo-Ky-69L">
-            <objects>
-                <viewController id="oa8-WF-EUL" customClass="FBViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h1Q-sg-HaD"/>
-                        <viewControllerLayoutGuide type="bottom" id="v8y-cv-vpj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0l5-rH-cqf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Facebook" id="g0p-G6-apF">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="FdM-Z4-HNA"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="fbmenu" destination="FdM-Z4-HNA" id="Adx-SB-Shm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vgw-eW-U5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="-229"/>
+            <point key="canvasLocation" x="-193" y="-1007"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="KND-Ju-bbb">
-            <objects>
-                <navigationController id="vK9-8Z-053" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gAd-cJ-PRd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oa8-WF-EUL" kind="relationship" relationship="rootViewController" id="dHy-OZ-HUo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Usy-ak-b77" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="-1007"/>
-        </scene>
-        <!--Nav Controller-->
         <scene sceneID="XZO-PL-Uwy">
             <objects>
-                <navigationController id="Ibm-zc-uXi" customClass="NavController" sceneMemberID="viewController">
+                <navigationController id="Ibm-zc-uXi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2hr-Oe-IuT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -214,16 +155,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="-229"/>
+            <point key="canvasLocation" x="-205" y="-229"/>
         </scene>
     </scenes>
     <resources>
-        <image name="fb.png" width="1000" height="1000"/>
         <image name="gMaps.png" width="512" height="512"/>
         <image name="menu.png" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zsc-bH-ba1"/>
+        <segue reference="Yuv-OH-ZDA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
