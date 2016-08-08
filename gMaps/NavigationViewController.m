@@ -23,7 +23,7 @@
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
     // configure the destination view controller:
-    if ( [sender isKindOfClass:[UITableViewCell class]] )
+    if ( [sender isKindOfClass:[UITableViewCell class]] && [[segue identifier] isEqualToString:@"search"])
     {
         UINavigationController *navController = segue.destinationViewController;
         ViewController* vc = [navController childViewControllers].firstObject;
@@ -38,7 +38,7 @@
     [super viewDidLoad];
 //    _placesClient = [GMSPlacesClient sharedClient];
     
-    menu = @[@"r1",@"r2",@"r3"];
+    menu = @[@"r1",@"r2",@"r3",@"r4"];
 }
 
 - (void)didReceiveMemoryWarning {

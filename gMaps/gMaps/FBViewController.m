@@ -8,6 +8,7 @@
 
 #import "FBViewController.h"
 #import "SWRevealViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface FBViewController ()
 
@@ -20,6 +21,10 @@
     _fbmenu.target = self.revealViewController;
     _fbmenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:(self.revealViewController.panGestureRecognizer)];
+    
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.center = self.view.center;
+    [self.view addSubview:loginButton];
 
     // Do any additional setup after loading the view.
 }

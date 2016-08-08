@@ -33,7 +33,7 @@
         <scene sceneID="wVh-YG-cc4">
             <objects>
                 <tableViewController id="RCi-dx-3Ad" customClass="NavigationViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="red-un-Vrv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" sectionIndexMinimumDisplayRowCount="1" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="red-un-Vrv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -91,7 +91,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="Ibm-zc-uXi" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Yuv-OH-ZDA"/>
+                                    <segue destination="Ibm-zc-uXi" kind="custom" identifier="search" customClass="SWRevealViewControllerSeguePushController" id="Yuv-OH-ZDA"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r3" id="2dh-i6-oVT">
@@ -120,6 +120,39 @@
                                         <constraint firstItem="1Qv-E9-rMQ" firstAttribute="leading" secondItem="q0o-BC-sqx" secondAttribute="trailing" constant="7" id="QP8-t9-FQ9"/>
                                         <constraint firstItem="q0o-BC-sqx" firstAttribute="top" secondItem="fsh-XP-mFg" secondAttribute="topMargin" id="bAV-NV-LmX"/>
                                         <constraint firstItem="1Qv-E9-rMQ" firstAttribute="centerY" secondItem="fsh-XP-mFg" secondAttribute="centerY" id="tnF-LO-2eD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="Zr4-sL-gdH" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="vfZ-Wb-xPK"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="r4" id="uq7-HH-1HH">
+                                <rect key="frame" x="0.0" y="260" width="600" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uq7-HH-1HH" id="qDQ-dY-Bq8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweeter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuH-Fy-Jjw">
+                                            <rect key="frame" x="68" y="24" width="70" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zhv-sc-irp">
+                                            <rect key="frame" x="8" y="8" width="53" height="53"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Zhv-sc-irp" secondAttribute="height" multiplier="1:1" id="bvF-Jz-r2N"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zhv-sc-irp" firstAttribute="leading" secondItem="qDQ-dY-Bq8" secondAttribute="leadingMargin" id="1AH-zb-SgQ"/>
+                                        <constraint firstItem="cuH-Fy-Jjw" firstAttribute="leading" secondItem="Zhv-sc-irp" secondAttribute="trailing" constant="7" id="E7d-wM-lIx"/>
+                                        <constraint firstItem="Zhv-sc-irp" firstAttribute="top" secondItem="qDQ-dY-Bq8" secondAttribute="topMargin" id="EXp-Zm-fyv"/>
+                                        <constraint firstItem="cuH-Fy-Jjw" firstAttribute="centerY" secondItem="qDQ-dY-Bq8" secondAttribute="centerY" id="kH9-l8-r14"/>
+                                        <constraint firstItem="Zhv-sc-irp" firstAttribute="bottom" secondItem="qDQ-dY-Bq8" secondAttribute="bottomMargin" id="rOF-IG-vRX"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,7 +197,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t2J-qf-4Sv"/>
+                    <navigationItem key="navigationItem" id="t2J-qf-4Sv">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="18E-QS-HdU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fbmenu" destination="18E-QS-HdU" id="fhU-ch-Maq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0d-MB-jMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,6 +267,7 @@
         <image name="fb.png" width="1000" height="1000"/>
         <image name="gMaps.png" width="512" height="512"/>
         <image name="menu.png" width="20" height="20"/>
+        <image name="twit.png" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yuv-OH-ZDA"/>

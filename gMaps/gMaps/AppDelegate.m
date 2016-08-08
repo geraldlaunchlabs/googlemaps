@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 @import GoogleMaps;
 @import GooglePlaces;
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 
@@ -24,6 +25,9 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
     [GMSServices provideAPIKey:APIKey];
     
     [GMSPlacesClient provideAPIKey:APIKey];
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     // Override point for customization after application launch.
     return YES;
@@ -45,11 +49,23 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
+    [FBSDKAppEvents activateApp];
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 @end
