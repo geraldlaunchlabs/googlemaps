@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */; };
 		6038F3501D52F1C400E69954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F34F1D52F1C400E69954 /* main.m */; };
 		6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3521D52F1C400E69954 /* AppDelegate.m */; };
 		6038F3561D52F1C400E69954 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3551D52F1C400E69954 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		60505B321D54A681004BC2BF /* GooglePlacePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60505B311D54A681004BC2BF /* GooglePlacePicker.framework */; };
 		60505B341D54A6F6004BC2BF /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */; };
 		60505B361D54A74B004BC2BF /* GooglePlacePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */; };
+		6052752C1D598EA2007790FD /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6052752A1D598EA2007790FD /* Model.xcdatamodeld */; };
+		6052752F1D59E496007790FD /* ProfileFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6052752E1D59E496007790FD /* ProfileFBViewController.m */; };
 		605A02981D588E4B00B48C50 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A02971D588E4B00B48C50 /* Bolts.framework */; };
 		605A029A1D588E5300B48C50 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A02991D588E5300B48C50 /* FBSDKCoreKit.framework */; };
 		605A029C1D588E5B00B48C50 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A029B1D588E5B00B48C50 /* FBSDKLoginKit.framework */; };
@@ -83,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitViewController.h; sourceTree = "<group>"; };
+		6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
 		6038F34B1D52F1C400E69954 /* gMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6038F34F1D52F1C400E69954 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6038F3511D52F1C400E69954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +135,9 @@
 		60505B311D54A681004BC2BF /* GooglePlacePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlacePicker.framework; sourceTree = "<group>"; };
 		60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 		60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle; sourceTree = "<group>"; };
+		6052752B1D598EA2007790FD /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6052752D1D59E496007790FD /* ProfileFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileFBViewController.h; sourceTree = "<group>"; };
+		6052752E1D59E496007790FD /* ProfileFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileFBViewController.m; sourceTree = "<group>"; };
 		605A02971D588E4B00B48C50 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		605A02991D588E5300B48C50 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		605A029B1D588E5B00B48C50 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6038F38C1D52F82900E69954 /* CoreData.framework in Frameworks */,
 				605A02BE1D589BF500B48C50 /* Social.framework in Frameworks */,
 				605A02BC1D589BED00B48C50 /* PassKit.framework in Frameworks */,
 				605A02BA1D589BE300B48C50 /* MobileCoreServices.framework in Frameworks */,
@@ -188,7 +197,6 @@
 				605A029C1D588E5B00B48C50 /* FBSDKLoginKit.framework in Frameworks */,
 				6038F3941D52F84A00E69954 /* GLKit.framework in Frameworks */,
 				6038F3921D52F84200E69954 /* CoreText.framework in Frameworks */,
-				6038F38C1D52F82900E69954 /* CoreData.framework in Frameworks */,
 				6038F38A1D52F81400E69954 /* Accelerate.framework in Frameworks */,
 				6038F3841D52F4F600E69954 /* GoogleMaps.framework in Frameworks */,
 				6038F3861D52F50B00E69954 /* GoogleMapsCore.framework in Frameworks */,
@@ -216,51 +224,12 @@
 		6038F3421D52F1C400E69954 = {
 			isa = PBXGroup;
 			children = (
-				605A02BD1D589BF500B48C50 /* Social.framework */,
-				605A02BB1D589BED00B48C50 /* PassKit.framework */,
-				605A02B91D589BE300B48C50 /* MobileCoreServices.framework */,
-				605A02B71D589BD600B48C50 /* MessageUI.framework */,
-				605A02B51D589BCD00B48C50 /* iAd.framework */,
-				605A02B31D589BC400B48C50 /* AVFoundation.framework */,
-				605A02B11D589BB900B48C50 /* AudioToolbox.framework */,
-				605A02AF1D589B7E00B48C50 /* StoreKit.framework */,
-				605A02AD1D589B6700B48C50 /* MediaPlayer.framework */,
-				605A02AB1D589B5A00B48C50 /* Foundation.framework */,
-				605A02A71D589B4500B48C50 /* EventKit.framework */,
-				605A02A81D589B4500B48C50 /* EventKitUI.framework */,
-				605A02A51D589B3600B48C50 /* CoreTelephony.framework */,
-				605A02A31D589B0D00B48C50 /* AdSupport.framework */,
 				605A02A11D589AD000B48C50 /* MoPubSDK */,
-				605A029D1D588E6100B48C50 /* FBSDKShareKit.framework */,
-				605A029B1D588E5B00B48C50 /* FBSDKLoginKit.framework */,
-				605A02991D588E5300B48C50 /* FBSDKCoreKit.framework */,
-				605A02971D588E4B00B48C50 /* Bolts.framework */,
-				60505B271D5477D1004BC2BF /* gMaps.png */,
-				60505B251D547061004BC2BF /* fb.png */,
-				6038F3A51D533A6500E69954 /* menu.png */,
-				6038F3A31D53365100E69954 /* AppleUSA1.png */,
-				605A029F1D58959200B48C50 /* twit.png */,
-				60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */,
-				60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */,
-				60505B311D54A681004BC2BF /* GooglePlacePicker.framework */,
-				60505B2F1D54A613004BC2BF /* GooglePlaces.framework */,
-				6038F3A11D52F8A600E69954 /* UIKit.framework */,
-				6038F39F1D52F89800E69954 /* SystemConfiguration.framework */,
-				6038F39D1D52F88700E69954 /* QuartzCore.framework */,
-				6038F39B1D52F87F00E69954 /* OpenGLES.framework */,
-				6038F3991D52F87600E69954 /* libz.tbd */,
+				605275291D5986BF007790FD /* Bundles */,
+				605275271D598614007790FD /* Frameworks */,
+				605275281D59864E007790FD /* Images */,
 				6038F3971D52F86600E69954 /* libc++.tbd */,
-				6038F3951D52F85200E69954 /* ImageIO.framework */,
-				6038F3931D52F84A00E69954 /* GLKit.framework */,
-				6038F3911D52F84200E69954 /* CoreText.framework */,
-				6038F38F1D52F83900E69954 /* CoreLocation.framework */,
-				6038F38D1D52F83100E69954 /* CoreGraphics.framework */,
-				6038F38B1D52F82900E69954 /* CoreData.framework */,
-				6038F3891D52F81400E69954 /* Accelerate.framework */,
-				6038F3871D52F78300E69954 /* GoogleMaps.bundle */,
-				6038F3851D52F50B00E69954 /* GoogleMapsCore.framework */,
-				6038F3831D52F4F600E69954 /* GoogleMaps.framework */,
-				6038F3811D52F4D700E69954 /* GoogleMapsBase.framework */,
+				6038F3991D52F87600E69954 /* libz.tbd */,
 				6038F34D1D52F1C400E69954 /* gMaps */,
 				6038F3671D52F1C400E69954 /* gMapsTests */,
 				6038F3721D52F1C400E69954 /* gMapsUITests */,
@@ -289,12 +258,17 @@
 				60505B231D5458D3004BC2BF /* NavigationViewController.m */,
 				6038F3541D52F1C400E69954 /* ViewController.h */,
 				6038F3551D52F1C400E69954 /* ViewController.m */,
+				6038F3571D52F1C400E69954 /* Main.storyboard */,
+				6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */,
+				6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */,
 				60505B2C1D549291004BC2BF /* FBViewController.h */,
 				60505B2D1D549291004BC2BF /* FBViewController.m */,
-				6038F3571D52F1C400E69954 /* Main.storyboard */,
-				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
+				6052752D1D59E496007790FD /* ProfileFBViewController.h */,
+				6052752E1D59E496007790FD /* ProfileFBViewController.m */,
 				6038F35C1D52F1C400E69954 /* LaunchScreen.storyboard */,
+				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
 				6038F35F1D52F1C400E69954 /* Info.plist */,
+				6052752A1D598EA2007790FD /* Model.xcdatamodeld */,
 				6038F34E1D52F1C400E69954 /* Supporting Files */,
 			);
 			path = gMaps;
@@ -324,6 +298,69 @@
 				6038F3751D52F1C400E69954 /* Info.plist */,
 			);
 			path = gMapsUITests;
+			sourceTree = "<group>";
+		};
+		605275271D598614007790FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6038F3891D52F81400E69954 /* Accelerate.framework */,
+				605A02A31D589B0D00B48C50 /* AdSupport.framework */,
+				605A02B11D589BB900B48C50 /* AudioToolbox.framework */,
+				605A02B31D589BC400B48C50 /* AVFoundation.framework */,
+				605A02971D588E4B00B48C50 /* Bolts.framework */,
+				6038F38B1D52F82900E69954 /* CoreData.framework */,
+				6038F38D1D52F83100E69954 /* CoreGraphics.framework */,
+				6038F38F1D52F83900E69954 /* CoreLocation.framework */,
+				605A02A51D589B3600B48C50 /* CoreTelephony.framework */,
+				6038F3911D52F84200E69954 /* CoreText.framework */,
+				605A02A71D589B4500B48C50 /* EventKit.framework */,
+				605A02A81D589B4500B48C50 /* EventKitUI.framework */,
+				605A02991D588E5300B48C50 /* FBSDKCoreKit.framework */,
+				605A029B1D588E5B00B48C50 /* FBSDKLoginKit.framework */,
+				605A029D1D588E6100B48C50 /* FBSDKShareKit.framework */,
+				605A02AB1D589B5A00B48C50 /* Foundation.framework */,
+				6038F3931D52F84A00E69954 /* GLKit.framework */,
+				6038F3831D52F4F600E69954 /* GoogleMaps.framework */,
+				6038F3811D52F4D700E69954 /* GoogleMapsBase.framework */,
+				6038F3851D52F50B00E69954 /* GoogleMapsCore.framework */,
+				60505B311D54A681004BC2BF /* GooglePlacePicker.framework */,
+				60505B2F1D54A613004BC2BF /* GooglePlaces.framework */,
+				605A02B51D589BCD00B48C50 /* iAd.framework */,
+				6038F3951D52F85200E69954 /* ImageIO.framework */,
+				605A02AD1D589B6700B48C50 /* MediaPlayer.framework */,
+				605A02B71D589BD600B48C50 /* MessageUI.framework */,
+				605A02B91D589BE300B48C50 /* MobileCoreServices.framework */,
+				6038F39B1D52F87F00E69954 /* OpenGLES.framework */,
+				605A02BB1D589BED00B48C50 /* PassKit.framework */,
+				6038F39D1D52F88700E69954 /* QuartzCore.framework */,
+				605A02BD1D589BF500B48C50 /* Social.framework */,
+				605A02AF1D589B7E00B48C50 /* StoreKit.framework */,
+				6038F39F1D52F89800E69954 /* SystemConfiguration.framework */,
+				6038F3A11D52F8A600E69954 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		605275281D59864E007790FD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6038F3A31D53365100E69954 /* AppleUSA1.png */,
+				60505B251D547061004BC2BF /* fb.png */,
+				60505B271D5477D1004BC2BF /* gMaps.png */,
+				6038F3A51D533A6500E69954 /* menu.png */,
+				605A029F1D58959200B48C50 /* twit.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		605275291D5986BF007790FD /* Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				6038F3871D52F78300E69954 /* GoogleMaps.bundle */,
+				60505B351D54A74B004BC2BF /* GooglePlacePicker.bundle */,
+				60505B331D54A6F6004BC2BF /* GooglePlaces.bundle */,
+			);
+			name = Bundles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,7 +505,10 @@
 				6038F3561D52F1C400E69954 /* ViewController.m in Sources */,
 				6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */,
 				60505B2E1D549291004BC2BF /* FBViewController.m in Sources */,
+				6052752C1D598EA2007790FD /* Model.xcdatamodeld in Sources */,
+				6052752F1D59E496007790FD /* ProfileFBViewController.m in Sources */,
 				60505B241D5458D3004BC2BF /* NavigationViewController.m in Sources */,
+				6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,
 				60505B201D544CD6004BC2BF /* SWRevealViewController.m in Sources */,
 			);
@@ -729,6 +769,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6052752A1D598EA2007790FD /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6052752B1D598EA2007790FD /* Model.xcdatamodel */,
+			);
+			currentVersion = 6052752B1D598EA2007790FD /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6038F3431D52F1C400E69954 /* Project object */;
 }

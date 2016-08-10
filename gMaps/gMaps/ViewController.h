@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet GMSMapView *GMS;
 @property (weak,nonatomic) IBOutlet UIBarButtonItem * menu;
-@property (strong, nonatomic) NSString *search;
+@property (nonatomic, assign) BOOL search;
 
 @end
 

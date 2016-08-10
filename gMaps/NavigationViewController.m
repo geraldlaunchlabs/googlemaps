@@ -15,30 +15,22 @@
 
 @end
 
-@implementation NavigationViewController {
-    NSArray *menu;
-    NSString *cellIdentifier;
-}
+@implementation NavigationViewController
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
 {
-    // configure the destination view controller:
     if ( [sender isKindOfClass:[UITableViewCell class]] && [[segue identifier] isEqualToString:@"search"])
     {
         UINavigationController *navController = segue.destinationViewController;
         ViewController* vc = [navController childViewControllers].firstObject;
         if ( [vc isKindOfClass:[ViewController class]] )
-        {
-            vc.search = @"YES";
-        }
+            vc.search = YES;
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    _placesClient = [GMSPlacesClient sharedClient];
-    
-    menu = @[@"r1",@"r2",@"r3",@"r4"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,16 +41,21 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [menu count];
+    switch (section) {
+        case 0: return 2;
+            break;
+        default: return 1;
+            break;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    cellIdentifier = [menu objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    //[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     

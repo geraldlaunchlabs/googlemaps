@@ -7,9 +7,13 @@
 //
 
 #import "ViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface FBViewController : ViewController
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem * fbmenu;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *profile;
 
 @end
