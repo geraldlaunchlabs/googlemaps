@@ -7,9 +7,15 @@
 //
 
 #import "ViewController.h"
+#import <TwitterKit/TwitterKit.h>
+
+//#import "MPAdView.h" //If using the open source SDK
+//#import <MoPub/MoPub.h> //If using Fabric
 
 @interface TwitViewController : ViewController
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem * twitmenu;
+
+//@property (nonatomic) MPAdView *adView;
 
 @end

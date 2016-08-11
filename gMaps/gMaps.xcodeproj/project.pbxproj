@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603114331D5C213C00BA0C61 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6031142F1D5C213C00BA0C61 /* Fabric.framework */; };
+		603114341D5C213C00BA0C61 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603114301D5C213C00BA0C61 /* TwitterKit.framework */; };
+		603114351D5C213C00BA0C61 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 603114311D5C213C00BA0C61 /* TwitterKitResources.bundle */; };
+		603114361D5C213C00BA0C61 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603114321D5C213C00BA0C61 /* TwitterCore.framework */; };
+		603114391D5C548E00BA0C61 /* ProfileTwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603114381D5C548E00BA0C61 /* ProfileTwitViewController.m */; };
+		6031143F1D5C8DE900BA0C61 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6031143E1D5C8DE900BA0C61 /* SearchView.m */; };
 		6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */; };
 		6038F3501D52F1C400E69954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F34F1D52F1C400E69954 /* main.m */; };
 		6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3521D52F1C400E69954 /* AppDelegate.m */; };
@@ -86,6 +92,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6031142F1D5C213C00BA0C61 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		603114301D5C213C00BA0C61 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		603114311D5C213C00BA0C61 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		603114321D5C213C00BA0C61 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		603114371D5C548E00BA0C61 /* ProfileTwitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTwitViewController.h; sourceTree = "<group>"; };
+		603114381D5C548E00BA0C61 /* ProfileTwitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTwitViewController.m; sourceTree = "<group>"; };
+		6031143D1D5C8DE900BA0C61 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchView.h; path = ../SearchView.h; sourceTree = "<group>"; };
+		6031143E1D5C8DE900BA0C61 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchView.m; path = ../SearchView.m; sourceTree = "<group>"; };
 		6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitViewController.h; sourceTree = "<group>"; };
 		6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
 		6038F34B1D52F1C400E69954 /* gMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,14 +179,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6038F38C1D52F82900E69954 /* CoreData.framework in Frameworks */,
-				605A02BE1D589BF500B48C50 /* Social.framework in Frameworks */,
-				605A02BC1D589BED00B48C50 /* PassKit.framework in Frameworks */,
-				605A02BA1D589BE300B48C50 /* MobileCoreServices.framework in Frameworks */,
-				605A02B81D589BD600B48C50 /* MessageUI.framework in Frameworks */,
 				605A02B61D589BCD00B48C50 /* iAd.framework in Frameworks */,
 				605A02B41D589BC400B48C50 /* AVFoundation.framework in Frameworks */,
 				605A02B21D589BB900B48C50 /* AudioToolbox.framework in Frameworks */,
+				6038F38C1D52F82900E69954 /* CoreData.framework in Frameworks */,
+				605A02BE1D589BF500B48C50 /* Social.framework in Frameworks */,
+				603114341D5C213C00BA0C61 /* TwitterKit.framework in Frameworks */,
+				605A02BC1D589BED00B48C50 /* PassKit.framework in Frameworks */,
+				605A02BA1D589BE300B48C50 /* MobileCoreServices.framework in Frameworks */,
+				605A02B81D589BD600B48C50 /* MessageUI.framework in Frameworks */,
 				6038F3A21D52F8A600E69954 /* UIKit.framework in Frameworks */,
 				6038F3A01D52F89800E69954 /* SystemConfiguration.framework in Frameworks */,
 				605A02B01D589B7E00B48C50 /* StoreKit.framework in Frameworks */,
@@ -189,6 +204,7 @@
 				60505B321D54A681004BC2BF /* GooglePlacePicker.framework in Frameworks */,
 				605A029A1D588E5300B48C50 /* FBSDKCoreKit.framework in Frameworks */,
 				605A029E1D588E6100B48C50 /* FBSDKShareKit.framework in Frameworks */,
+				603114361D5C213C00BA0C61 /* TwitterCore.framework in Frameworks */,
 				6038F39C1D52F87F00E69954 /* OpenGLES.framework in Frameworks */,
 				60505B301D54A613004BC2BF /* GooglePlaces.framework in Frameworks */,
 				6038F39A1D52F87600E69954 /* libz.tbd in Frameworks */,
@@ -198,6 +214,7 @@
 				6038F3941D52F84A00E69954 /* GLKit.framework in Frameworks */,
 				6038F3921D52F84200E69954 /* CoreText.framework in Frameworks */,
 				6038F38A1D52F81400E69954 /* Accelerate.framework in Frameworks */,
+				603114331D5C213C00BA0C61 /* Fabric.framework in Frameworks */,
 				6038F3841D52F4F600E69954 /* GoogleMaps.framework in Frameworks */,
 				6038F3861D52F50B00E69954 /* GoogleMapsCore.framework in Frameworks */,
 				6038F3821D52F4D700E69954 /* GoogleMapsBase.framework in Frameworks */,
@@ -224,6 +241,10 @@
 		6038F3421D52F1C400E69954 = {
 			isa = PBXGroup;
 			children = (
+				6031142F1D5C213C00BA0C61 /* Fabric.framework */,
+				603114301D5C213C00BA0C61 /* TwitterKit.framework */,
+				603114311D5C213C00BA0C61 /* TwitterKitResources.bundle */,
+				603114321D5C213C00BA0C61 /* TwitterCore.framework */,
 				605A02A11D589AD000B48C50 /* MoPubSDK */,
 				605275291D5986BF007790FD /* Bundles */,
 				605275271D598614007790FD /* Frameworks */,
@@ -258,13 +279,17 @@
 				60505B231D5458D3004BC2BF /* NavigationViewController.m */,
 				6038F3541D52F1C400E69954 /* ViewController.h */,
 				6038F3551D52F1C400E69954 /* ViewController.m */,
-				6038F3571D52F1C400E69954 /* Main.storyboard */,
-				6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */,
-				6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */,
 				60505B2C1D549291004BC2BF /* FBViewController.h */,
 				60505B2D1D549291004BC2BF /* FBViewController.m */,
 				6052752D1D59E496007790FD /* ProfileFBViewController.h */,
 				6052752E1D59E496007790FD /* ProfileFBViewController.m */,
+				6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */,
+				6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */,
+				603114371D5C548E00BA0C61 /* ProfileTwitViewController.h */,
+				603114381D5C548E00BA0C61 /* ProfileTwitViewController.m */,
+				6031143D1D5C8DE900BA0C61 /* SearchView.h */,
+				6031143E1D5C8DE900BA0C61 /* SearchView.m */,
+				6038F3571D52F1C400E69954 /* Main.storyboard */,
 				6038F35C1D52F1C400E69954 /* LaunchScreen.storyboard */,
 				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
 				6038F35F1D52F1C400E69954 /* Info.plist */,
@@ -373,6 +398,7 @@
 				6038F3471D52F1C400E69954 /* Sources */,
 				6038F3481D52F1C400E69954 /* Frameworks */,
 				6038F3491D52F1C400E69954 /* Resources */,
+				6031142E1D5C20B300BA0C61 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -468,6 +494,7 @@
 			files = (
 				6038F3A41D53365100E69954 /* AppleUSA1.png in Resources */,
 				605A02A21D589AD000B48C50 /* MoPubSDK in Resources */,
+				603114351D5C213C00BA0C61 /* TwitterKitResources.bundle in Resources */,
 				60505B261D547061004BC2BF /* fb.png in Resources */,
 				6038F35E1D52F1C400E69954 /* LaunchScreen.storyboard in Resources */,
 				6038F3A61D533A6500E69954 /* menu.png in Resources */,
@@ -497,17 +524,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6031142E1D5C20B300BA0C61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 14ab32f74969445eb9ba967cc0a0ae159b5d2c5c 5fb9bc2947658ee89060bb7bb8d4e59a63af40c45e61329047e5528dda60bb86";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6038F3471D52F1C400E69954 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6031143F1D5C8DE900BA0C61 /* SearchView.m in Sources */,
 				6038F3561D52F1C400E69954 /* ViewController.m in Sources */,
 				6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */,
 				60505B2E1D549291004BC2BF /* FBViewController.m in Sources */,
 				6052752C1D598EA2007790FD /* Model.xcdatamodeld in Sources */,
 				6052752F1D59E496007790FD /* ProfileFBViewController.m in Sources */,
 				60505B241D5458D3004BC2BF /* NavigationViewController.m in Sources */,
+				603114391D5C548E00BA0C61 /* ProfileTwitViewController.m in Sources */,
 				6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,
 				60505B201D544CD6004BC2BF /* SWRevealViewController.m in Sources */,

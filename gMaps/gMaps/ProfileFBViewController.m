@@ -38,6 +38,7 @@
         NSData *data = [NSData dataWithContentsOfURL:strUrl];
         UIImage *img = [UIImage imageWithData:data];
         self.coverPhoto.image = img;
+        [self.scroll setContentOffset:CGPointMake(0,self.view.frame.size.width/10) animated:YES];
         self.profName.text = result[@"name"];
     }];
     
@@ -68,6 +69,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [self.scroll setContentOffset:CGPointMake(0,self.view.frame.size.width/10) animated:YES];
 }
 
 /*

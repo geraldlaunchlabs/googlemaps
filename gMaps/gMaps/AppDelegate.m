@@ -10,6 +10,9 @@
 @import GoogleMaps;
 @import GooglePlaces;
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+
 
 @interface AppDelegate ()
 
@@ -28,6 +31,8 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+    
+    [Fabric with:@[[Twitter class]]];
     
     // Override point for customization after application launch.
     return YES;

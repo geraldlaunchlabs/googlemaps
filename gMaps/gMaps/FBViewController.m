@@ -36,31 +36,7 @@
     
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
     
-    //[self fetchUserInfo];
-    
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"/me"
-                                                                  parameters:@{ @"fields": @"picture",}
-                                                                  HTTPMethod:@"GET"];
-    
-    
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-            // Insert your code here
-            NSURL *strUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@",result[@"picture"][@"data"][@"url"]]];
-            NSData *data = [NSData dataWithContentsOfURL:strUrl];
-            UIImage *img = [UIImage imageWithData:data];
-            [self.profile setBackgroundImage:img forState:UIControlStateNormal];
-
-            
-        }];
-        
-//        self.profile.enabled = YES;
-//        self.profile.tintColor = [UIColor whiteColor];
-    } else {
-        [self.profile setBackgroundImage:nil forState:UIControlStateNormal];
-//        self.profile.enabled = NO;
-//        self.profile.tintColor = [UIColor colorWithRed:59.0/255.0 green:89.0/255.0 blue:152.0/255.0 alpha:1.0];
-    }
+    [self Logged];
     
     // Do any additional setup after loading the view.
 }
@@ -70,6 +46,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)Logged {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]initWithGraphPath:@"/me"
+                                                                      parameters:@{ @"fields": @"picture",}
+                                                                      HTTPMethod:@"GET"];
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            // Insert your code here
+            NSURL *strUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@",result[@"picture"][@"data"][@"url"]]];
+            NSData *data = [NSData dataWithContentsOfURL:strUrl];
+            UIImage *img = [UIImage imageWithData:data];
+            [self.profile setBackgroundImage:img forState:UIControlStateNormal];
+        }];
+    } else {
+        [self.profile setBackgroundImage:nil forState:UIControlStateNormal];
+    }
+}
 
 //- (IBAction)btnFacebookPressed:(id)sender {
 //    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];

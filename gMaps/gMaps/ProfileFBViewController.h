@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet FBSDKProfilePictureView *profPic;
 @property (strong, nonatomic) IBOutlet UIImageView *coverPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *profName;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 
 @end
