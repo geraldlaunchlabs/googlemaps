@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -255,15 +256,27 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="18E-QS-HdU">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="QUV-CB-dcF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jgF-Cq-msF">
-                                <rect key="frame" x="550" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="R9I-rN-Ad8" kind="show" identifier="profile" id="dni-Td-8ij"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="QC8-yE-9lN">
+                                <view key="customView" contentMode="scaleToFill" id="4ig-iD-njp" customClass="FBSDKProfilePictureView">
+                                    <rect key="frame" x="547" y="5" width="33" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="QUV-CB-dcF">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jgF-Cq-msF">
+                                    <rect key="frame" x="495" y="7" width="44" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Profile">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="R9I-rN-Ad8" kind="show" identifier="profile" id="dni-Td-8ij"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -287,7 +300,18 @@
                     <view key="view" contentMode="scaleToFill" id="bAL-Wa-Tfi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZ4-CQ-4Wd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zZ4-CQ-4Wd" firstAttribute="top" secondItem="2Na-xT-PbS" secondAttribute="bottom" id="BVp-d4-b2w"/>
+                            <constraint firstAttribute="trailing" secondItem="zZ4-CQ-4Wd" secondAttribute="trailing" id="I7L-0a-qei"/>
+                            <constraint firstItem="zZ4-CQ-4Wd" firstAttribute="leading" secondItem="bAL-Wa-Tfi" secondAttribute="leading" id="dnW-bq-aoX"/>
+                            <constraint firstItem="VoP-aA-q8c" firstAttribute="top" secondItem="zZ4-CQ-4Wd" secondAttribute="bottom" id="f2Q-y0-PBB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Twitter" id="5fb-gQ-9Qz">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="IeH-7U-UCH">
@@ -300,6 +324,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="scroll" destination="zZ4-CQ-4Wd" id="eYW-db-T6Q"/>
                         <outlet property="twitmenu" destination="IeH-7U-UCH" id="Aey-VM-gwM"/>
                     </connections>
                 </viewController>
@@ -310,6 +335,7 @@
         <!--Profile Twit View Controller-->
         <scene sceneID="A1V-4z-plc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lH-Oc-25w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZNt-kx-oSG" customClass="ProfileTwitViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYt-fs-ppO"/>
@@ -319,31 +345,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZ4-CQ-4Wd">
-                                <rect key="frame" x="0.0" y="271" width="600" height="285"/>
-                            </scrollView>
-                            <searchBar contentMode="redraw" text="" placeholder="Search Tweets" translatesAutoresizingMaskIntoConstraints="NO" id="KQ4-O8-G7Z">
-                                <rect key="frame" x="0.0" y="64" width="542" height="44"/>
+                            <searchBar contentMode="redraw" placeholder="Search Tweets" translatesAutoresizingMaskIntoConstraints="NO" id="KQ4-O8-G7Z">
+                                <rect key="frame" x="0.0" y="64" width="531" height="44"/>
                                 <color key="barTintColor" red="0.13333333333333333" green="0.74901960784313726" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-UI-uM2">
-                                <rect key="frame" x="542" y="64" width="58" height="44"/>
+                                <rect key="frame" x="531" y="64" width="69" height="44"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.74901960784313726" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Search">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mcQ-UI-uM2" secondAttribute="height" multiplier="69:44" id="sWa-Bj-caj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <state key="normal" title="Refresh">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="search:" destination="ZNt-kx-oSG" eventType="touchUpInside" id="DM8-hu-I2K"/>
-                                    <segue destination="ZNt-kx-oSG" kind="show" identifier="go" id="rCz-JV-BHX"/>
+                                    <action selector="search:" destination="ZNt-kx-oSG" eventType="touchUpInside" id="Ki2-s9-bfg"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAw-8m-VKh">
-                                <rect key="frame" x="0.0" y="108" width="600" height="163"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qAw-8m-VKh" secondAttribute="height" multiplier="600:163" id="eAI-43-PWE"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
                                 <connections>
                                     <segue destination="b52-KT-8ED" kind="embed" identifier="search" id="dZw-97-8sc"/>
                                 </connections>
@@ -351,30 +373,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zZ4-CQ-4Wd" secondAttribute="trailing" id="5cF-nr-qKz"/>
-                            <constraint firstItem="yYx-DH-7Q8" firstAttribute="top" secondItem="zZ4-CQ-4Wd" secondAttribute="bottom" id="Cry-sA-9AP"/>
+                            <constraint firstItem="yYx-DH-7Q8" firstAttribute="top" secondItem="qAw-8m-VKh" secondAttribute="bottom" id="B1e-B3-4Mo"/>
+                            <constraint firstItem="qAw-8m-VKh" firstAttribute="top" secondItem="mcQ-UI-uM2" secondAttribute="bottom" id="BKR-11-ZNK"/>
                             <constraint firstItem="mcQ-UI-uM2" firstAttribute="top" secondItem="WYt-fs-ppO" secondAttribute="bottom" id="GjZ-J7-T6g"/>
                             <constraint firstItem="KQ4-O8-G7Z" firstAttribute="top" secondItem="WYt-fs-ppO" secondAttribute="bottom" id="HVg-yK-Vqn"/>
-                            <constraint firstItem="zZ4-CQ-4Wd" firstAttribute="leading" secondItem="p1r-1b-Znb" secondAttribute="leading" id="QUD-O1-izy"/>
+                            <constraint firstItem="qAw-8m-VKh" firstAttribute="leading" secondItem="p1r-1b-Znb" secondAttribute="leading" id="KdD-Wp-S9g"/>
                             <constraint firstAttribute="trailing" secondItem="mcQ-UI-uM2" secondAttribute="trailing" id="ShS-vK-lOG"/>
                             <constraint firstItem="mcQ-UI-uM2" firstAttribute="bottom" secondItem="KQ4-O8-G7Z" secondAttribute="bottom" id="UuV-us-5q8"/>
-                            <constraint firstItem="zZ4-CQ-4Wd" firstAttribute="top" secondItem="qAw-8m-VKh" secondAttribute="bottom" id="dcU-cN-h26"/>
                             <constraint firstItem="KQ4-O8-G7Z" firstAttribute="leading" secondItem="p1r-1b-Znb" secondAttribute="leading" id="drf-JS-PGl"/>
-                            <constraint firstItem="qAw-8m-VKh" firstAttribute="top" secondItem="mcQ-UI-uM2" secondAttribute="bottom" id="fVE-I1-duf"/>
-                            <constraint firstAttribute="trailing" secondItem="qAw-8m-VKh" secondAttribute="trailing" id="jww-2P-4vH"/>
-                            <constraint firstItem="qAw-8m-VKh" firstAttribute="leading" secondItem="p1r-1b-Znb" secondAttribute="leading" id="rLf-x4-939"/>
+                            <constraint firstAttribute="trailing" secondItem="qAw-8m-VKh" secondAttribute="trailing" id="pgK-fG-yLx"/>
                             <constraint firstItem="mcQ-UI-uM2" firstAttribute="leading" secondItem="KQ4-O8-G7Z" secondAttribute="trailing" id="smA-Nr-58U"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="child" destination="qAw-8m-VKh" id="W68-05-Qbo"/>
                         <outlet property="scroll" destination="zZ4-CQ-4Wd" id="THT-sa-XZp"/>
-                        <outlet property="searchBar" destination="KQ4-O8-G7Z" id="3qP-Wl-QL0"/>
+                        <outlet property="searchThis" destination="KQ4-O8-G7Z" id="J5K-Xy-I0H"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9lH-Oc-25w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1842" y="-1007"/>
         </scene>
@@ -452,6 +469,10 @@
                                             <constraint firstAttribute="width" secondItem="BmY-Le-D7i" secondAttribute="height" multiplier="1:1" id="u4x-tF-o2q"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-Px-2BB">
+                                        <rect key="frame" x="0.0" y="428" width="600" height="7"/>
+                                        <color key="backgroundColor" red="0.17647058823529413" green="0.27058823529411763" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -460,13 +481,16 @@
                                     <constraint firstItem="E87-DN-4bc" firstAttribute="leading" secondItem="S81-1V-Ic5" secondAttribute="leading" id="6Ef-Iy-31V"/>
                                     <constraint firstItem="gEm-BR-hOq" firstAttribute="centerY" secondItem="E87-DN-4bc" secondAttribute="centerY" id="6Sa-zT-s6M"/>
                                     <constraint firstItem="w2h-7G-65m" firstAttribute="leading" secondItem="E87-DN-4bc" secondAttribute="trailing" id="Eag-Vq-w93"/>
+                                    <constraint firstItem="H1X-ki-Yim" firstAttribute="width" secondItem="hg2-Px-2BB" secondAttribute="height" multiplier="370:7" id="Ee1-97-ePu"/>
                                     <constraint firstItem="3aM-VV-6Qq" firstAttribute="bottom" secondItem="MTS-EP-PWc" secondAttribute="bottom" id="HQh-z1-wQk"/>
                                     <constraint firstItem="hrf-V2-KIy" firstAttribute="top" secondItem="srD-Tm-xCb" secondAttribute="bottom" id="J8u-wf-hJV"/>
                                     <constraint firstItem="srD-Tm-xCb" firstAttribute="top" secondItem="S81-1V-Ic5" secondAttribute="top" id="Jj9-EI-5xm"/>
                                     <constraint firstItem="MTS-EP-PWc" firstAttribute="width" secondItem="w2h-7G-65m" secondAttribute="height" multiplier="18:17" id="Kl5-QW-XJN"/>
                                     <constraint firstItem="BmY-Le-D7i" firstAttribute="top" secondItem="srD-Tm-xCb" secondAttribute="bottom" id="Kvh-eY-0PN"/>
                                     <constraint firstItem="3aM-VV-6Qq" firstAttribute="top" secondItem="BmY-Le-D7i" secondAttribute="bottom" id="L1K-1Z-A0l"/>
+                                    <constraint firstItem="hg2-Px-2BB" firstAttribute="leading" secondItem="3aM-VV-6Qq" secondAttribute="leading" id="Nnn-tV-zAu"/>
                                     <constraint firstItem="srD-Tm-xCb" firstAttribute="leading" secondItem="hrf-V2-KIy" secondAttribute="leading" id="Q1G-sm-FIx"/>
+                                    <constraint firstItem="hg2-Px-2BB" firstAttribute="trailing" secondItem="3aM-VV-6Qq" secondAttribute="trailing" id="QO2-B4-mpC"/>
                                     <constraint firstItem="MTS-EP-PWc" firstAttribute="centerX" secondItem="w2h-7G-65m" secondAttribute="centerX" id="RwS-h5-cBz"/>
                                     <constraint firstAttribute="trailing" secondItem="srD-Tm-xCb" secondAttribute="trailing" id="WRU-v3-uos"/>
                                     <constraint firstItem="H1X-ki-Yim" firstAttribute="leading" secondItem="gEm-BR-hOq" secondAttribute="trailing" id="ZTW-bE-4yu"/>
@@ -481,6 +505,7 @@
                                     <constraint firstItem="BmY-Le-D7i" firstAttribute="width" secondItem="gEm-BR-hOq" secondAttribute="height" multiplier="5:17" id="ngC-Lm-M1r"/>
                                     <constraint firstItem="hrf-V2-KIy" firstAttribute="bottom" secondItem="w2h-7G-65m" secondAttribute="bottom" id="nmI-iz-ZLR"/>
                                     <constraint firstItem="BmY-Le-D7i" firstAttribute="leading" secondItem="MTS-EP-PWc" secondAttribute="trailing" id="ogg-AM-CBC"/>
+                                    <constraint firstItem="hg2-Px-2BB" firstAttribute="top" secondItem="3aM-VV-6Qq" secondAttribute="bottom" id="ouh-S0-crw"/>
                                     <constraint firstItem="gEm-BR-hOq" firstAttribute="width" secondItem="E87-DN-4bc" secondAttribute="height" multiplier="1:1.5" id="sB1-8G-hxB"/>
                                     <constraint firstItem="hrf-V2-KIy" firstAttribute="leading" secondItem="S81-1V-Ic5" secondAttribute="leading" id="sM2-2b-HEV"/>
                                     <constraint firstItem="H1X-ki-Yim" firstAttribute="width" secondItem="w2h-7G-65m" secondAttribute="height" multiplier="37:17" id="ubC-W8-RVu"/>
@@ -537,12 +562,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJd-QG-4rx" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hJd-QG-4rx" secondAttribute="bottom" id="3xS-wi-5kM"/>
-                            <constraint firstAttribute="trailing" secondItem="hJd-QG-4rx" secondAttribute="trailing" id="530-Ma-eST"/>
+                            <constraint firstAttribute="trailing" secondItem="hJd-QG-4rx" secondAttribute="trailing" id="rgf-dY-C3i"/>
                             <constraint firstItem="hJd-QG-4rx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sVN-Oy-CKY"/>
                             <constraint firstItem="hJd-QG-4rx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tqc-ga-Fz1"/>
                         </constraints>
@@ -550,6 +575,18 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Google Maps" id="qWr-ty-86o">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="U0w-59-Oak"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="eiW-0h-YHV">
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="refresh" animates="NO" id="cub-uO-1sr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="0Mv-pu-QTx">
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" id="LVC-9s-zhj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -566,7 +603,7 @@
             <objects>
                 <tableViewController id="b52-KT-8ED" customClass="SearchView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="17R-L0-Yta">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -587,7 +624,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ao9-7H-zU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="-1080.5"/>
+            <point key="canvasLocation" x="2552" y="-1083"/>
         </scene>
     </scenes>
     <resources>
@@ -597,8 +634,8 @@
         <image name="twit.png" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yJo-1G-3om"/>
-        <segue reference="0Gu-Yn-dWV"/>
+        <segue reference="lMp-jD-hTe"/>
+        <segue reference="WEE-YR-Adv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

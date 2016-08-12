@@ -17,14 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
-    self.dataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:self.search APIClient:client];
+    [self searchTweets:@"olympics"];
+    [TWTRMoPubNativeAdContainerView appearance].theme = TWTRNativeAdThemeDark;
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)searchTweets:(NSString*) search {
+//    TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
+//    self.dataSource = [[TWTRUserTimelineDataSource alloc] initWithScreenName:search APIClient:client];
+    
+    TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
+    self.adConfiguration = [[TWTRMoPubAdConfiguration alloc] initWithAdUnitID:TWTRMoPubSampleAdUnitID keywords:nil];
+    self.dataSource = [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:search APIClient:client];
 }
 
 /*

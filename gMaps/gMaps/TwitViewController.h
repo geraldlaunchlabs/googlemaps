@@ -15,6 +15,7 @@
 @interface TwitViewController : ViewController
 
 @property (weak,nonatomic) IBOutlet UIBarButtonItem * twitmenu;
+@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
 
 //@property (nonatomic) MPAdView *adView;
 

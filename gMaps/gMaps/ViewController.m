@@ -16,17 +16,29 @@
 
 @interface ViewController ()
 
-@property (strong) NSManagedObjectContext *managedObjectContext;
+@property (strong) NSMutableArray *places;
 
-- (void)initializeCoreData;
-
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+//@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+//
+//- (void)initializeCoreData;
+//
+//@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation ViewController {
     GMSPlacesClient *_placesClient;
     GMSPlacePicker *_placePicker;
+}
+
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
 }
 
 - (void)viewDidLoad {
@@ -54,11 +66,38 @@
     //[self initializeFetchedResultsController];
 
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self placeMarkers];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)placeMarkers {
+    int i;
+    double lat,lon;
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Places"];
+    self.places= [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSLog(@"count places: %d",(int)self.places.count);
+    for(i=0;i<(int)self.places.count;i++){
+        lat = [[[self.places objectAtIndex:i] valueForKey: @"latitude"] doubleValue];
+        lon = [[[self.places objectAtIndex:i] valueForKey: @"longitude"] doubleValue];
+        GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
+                                                                longitude:lon
+                                                                     zoom:6];
+        [self.GMS setCamera:camera];
+        
+        GMSMarker *marker = [[GMSMarker alloc] init];
+        //marker.appearAnimation = kGMSMarkerAnimationPop;
+        marker.position = CLLocationCoordinate2DMake(lat,lon);
+        marker.title = [[self.places objectAtIndex:0] valueForKey: @"name"];
+        marker.snippet = [[self.places objectAtIndex:0] valueForKey: @"address"];
+        marker.map = self.GMS;
+    }
 }
 
 
@@ -79,22 +118,66 @@
             return;
         }
         if (place != nil) {
-            GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:place.coordinate.latitude
-                                                                    longitude:place.coordinate.longitude
-                                                                         zoom:6];
-            [self.GMS setCamera:camera];
-            
-            GMSMarker *marker = [[GMSMarker alloc] init];
-            //marker.appearAnimation = kGMSMarkerAnimationPop;
-            marker.position = CLLocationCoordinate2DMake(place.coordinate.latitude,place.coordinate.longitude);
-            marker.title = place.name;
-            marker.snippet = [[place.formattedAddress componentsSeparatedByString:@", "]componentsJoinedByString:@"\n"];
-            marker.map = self.GMS;
+            [self addPlace:place];
+            [self placeMarkers];
         } else {
             NSLog(@"No Place Selected");
         }
     }];
 }
+
+- (IBAction)add:(id)sender {
+    [self searchPlace];
+}
+
+
+- (void)addPlace:(GMSPlace*) place {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    // Create a new managed object
+    NSManagedObject *newPlace = [NSEntityDescription insertNewObjectForEntityForName:@"Places" inManagedObjectContext:context];
+    
+    [newPlace setValue:place.name forKey:@"name"];
+    [newPlace setValue:[[place.formattedAddress componentsSeparatedByString:@", "]componentsJoinedByString:@"\n"] forKey:@"address"];
+    [newPlace setValue:[NSNumber numberWithDouble:place.coordinate.latitude] forKey:@"latitude"];
+    [newPlace setValue:[NSNumber numberWithDouble:place.coordinate.longitude] forKey:@"longitude"];
+    
+    NSError *error = nil;
+    
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
+}
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"refresh"]) {
+        NSManagedObjectContext *context = [self managedObjectContext];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Places"];
+        [fetchRequest setIncludesPropertyValues:NO];
+        
+        NSError *error;
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        
+        for (NSManagedObject *object in fetchedObjects)
+        {
+            [context deleteObject:object];
+        }
+        
+        error = nil;
+        [context save:&error];
+    }
+}
+
+
 
 
 //- (IBAction)getCurrentPlace:(UIButton *)sender {
@@ -121,57 +204,57 @@
 
 
 
-- (id)init
-{
-    self = [super init];
-    if (!self) return nil;
-    
-    [self initializeCoreData];
-    
-    return self;
-}
-
-- (void)initializeCoreData
-{
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
-    NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    NSAssert(mom != nil, @"Error initializing Managed Object Model");
-    
-    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [moc setPersistentStoreCoordinator:psc];
-    [self setManagedObjectContext:moc];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"DataModel.sqlite"];
-    
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSError *error = nil;
-        NSPersistentStoreCoordinator *psc = [[self managedObjectContext] persistentStoreCoordinator];
-        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
-        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
-    });
-}
-
-- (void)initializeFetchedResultsController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Places"];
-    
-    NSSortDescriptor *index = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    
-    [request setSortDescriptors:@[index]];
-    
-    NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    //Retrieve the main queue NSManagedObjectContext
-    
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil]];
-    self.fetchedResultsController.delegate = (id)self;
-    
-    NSError *error = nil;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
-        abort();
-    }
-}
+//- (id)init
+//{
+//    self = [super init];
+//    if (!self) return nil;
+//    
+//    [self initializeCoreData];
+//    
+//    return self;
+//}
+//
+//- (void)initializeCoreData
+//{
+//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+//    NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+//    NSAssert(mom != nil, @"Error initializing Managed Object Model");
+//    
+//    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+//    NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//    [moc setPersistentStoreCoordinator:psc];
+//    [self setManagedObjectContext:moc];
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSURL *documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+//    NSURL *storeURL = [documentsURL URLByAppendingPathComponent:@"DataModel.sqlite"];
+//    
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+//        NSError *error = nil;
+//        NSPersistentStoreCoordinator *psc = [[self managedObjectContext] persistentStoreCoordinator];
+//        NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+//        NSAssert(store != nil, @"Error initializing PSC: %@\n%@", [error localizedDescription], [error userInfo]);
+//    });
+//}
+//
+//- (void)initializeFetchedResultsController
+//{
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Places"];
+//    
+//    NSSortDescriptor *index = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+//    
+//    [request setSortDescriptors:@[index]];
+//    
+//    NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//    //Retrieve the main queue NSManagedObjectContext
+//    
+//    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil]];
+//    self.fetchedResultsController.delegate = (id)self;
+//    
+//    NSError *error = nil;
+//    if (![[self fetchedResultsController] performFetch:&error]) {
+//        NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
+//        abort();
+//    }
+//}
 
 @end

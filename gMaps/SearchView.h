@@ -11,6 +11,6 @@
 
 @interface SearchView : TWTRTimelineViewController
 
-@property (weak,nonatomic) NSString *search;
+-(void) searchTweets:(NSString *)search;
 
 @end

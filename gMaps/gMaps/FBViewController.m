@@ -52,14 +52,8 @@
                                                                       parameters:@{ @"fields": @"picture",}
                                                                       HTTPMethod:@"GET"];
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-            // Insert your code here
-            NSURL *strUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@",result[@"picture"][@"data"][@"url"]]];
-            NSData *data = [NSData dataWithContentsOfURL:strUrl];
-            UIImage *img = [UIImage imageWithData:data];
-            [self.profile setBackgroundImage:img forState:UIControlStateNormal];
         }];
     } else {
-        [self.profile setBackgroundImage:nil forState:UIControlStateNormal];
     }
 }
 

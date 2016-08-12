@@ -11,13 +11,7 @@
 #import <TwitterKit/TwitterKit.h>
 
 
-@interface ProfileTwitViewController : ViewController {
-    IBOutlet UISearchBar *searchBar;
+@interface ProfileTwitViewController : ViewController<UISearchBarDelegate> {
+    IBOutlet UISearchBar *searchThis;
 }
-
-@property (strong, nonatomic) IBOutlet UIView *child;
-
-@property (weak,nonatomic) NSString *go;
-
-
 @end
