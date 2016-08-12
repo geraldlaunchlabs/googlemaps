@@ -42,27 +42,6 @@
         self.profName.text = result[@"name"];
     }];
     
-    
-//    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-//                                  initWithGraphPath:[NSString stringWithFormat:@"/me?fields=cover"]
-//                                  parameters:nil
-//                                  HTTPMethod:@"GET"];
-//    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,id result,NSError *error){
-//         NSDictionary *pictureData  = result[@"picture"];
-//         
-//         NSDictionary *redata = pictureData[@"data"];
-//         
-//         NSURL *strUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@",redata[@"url"]]];
-//         
-//         NSData *data = [NSData dataWithContentsOfURL:strUrl];
-//         UIImage *img = [[UIImage alloc] initWithData:data];
-//         self.coverPhoto = [[UIImageView alloc] initWithImage:img];
-//         
-//     }];
-    
-    
-    
-    
     // Do any additional setup after loading the view.
 }
 

@@ -14,8 +14,6 @@
 		603114391D5C548E00BA0C61 /* ProfileTwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603114381D5C548E00BA0C61 /* ProfileTwitViewController.m */; };
 		6031143F1D5C8DE900BA0C61 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6031143E1D5C8DE900BA0C61 /* SearchView.m */; };
 		6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */; };
-		603768331D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 603768301D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.m */; };
-		603768341D5D98E800C9BC3B /* PlacesMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 603768321D5D98E800C9BC3B /* PlacesMO.m */; };
 		6038F3501D52F1C400E69954 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F34F1D52F1C400E69954 /* main.m */; };
 		6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3521D52F1C400E69954 /* AppDelegate.m */; };
 		6038F3561D52F1C400E69954 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6038F3551D52F1C400E69954 /* ViewController.m */; };
@@ -104,10 +102,6 @@
 		6031143E1D5C8DE900BA0C61 /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchView.m; path = ../SearchView.m; sourceTree = "<group>"; };
 		6033CD211D5B0D1C00A0F2A0 /* TwitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitViewController.h; sourceTree = "<group>"; };
 		6033CD221D5B0D1C00A0F2A0 /* TwitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitViewController.m; sourceTree = "<group>"; };
-		6037682F1D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlacesMO+CoreDataProperties.h"; sourceTree = "<group>"; };
-		603768301D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PlacesMO+CoreDataProperties.m"; sourceTree = "<group>"; };
-		603768311D5D98E800C9BC3B /* PlacesMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesMO.h; sourceTree = "<group>"; };
-		603768321D5D98E800C9BC3B /* PlacesMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesMO.m; sourceTree = "<group>"; };
 		6038F34B1D52F1C400E69954 /* gMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6038F34F1D52F1C400E69954 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6038F3511D52F1C400E69954 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -300,10 +294,6 @@
 				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
 				6038F35F1D52F1C400E69954 /* Info.plist */,
 				6052752A1D598EA2007790FD /* Model.xcdatamodeld */,
-				6037682F1D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.h */,
-				603768301D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.m */,
-				603768311D5D98E800C9BC3B /* PlacesMO.h */,
-				603768321D5D98E800C9BC3B /* PlacesMO.m */,
 				6038F34E1D52F1C400E69954 /* Supporting Files */,
 			);
 			path = gMaps;
@@ -558,7 +548,6 @@
 				6031143F1D5C8DE900BA0C61 /* SearchView.m in Sources */,
 				6038F3561D52F1C400E69954 /* ViewController.m in Sources */,
 				6038F3531D52F1C400E69954 /* AppDelegate.m in Sources */,
-				603768331D5D98E800C9BC3B /* PlacesMO+CoreDataProperties.m in Sources */,
 				60505B2E1D549291004BC2BF /* FBViewController.m in Sources */,
 				6052752C1D598EA2007790FD /* Model.xcdatamodeld in Sources */,
 				6052752F1D59E496007790FD /* ProfileFBViewController.m in Sources */,
@@ -566,7 +555,6 @@
 				603114391D5C548E00BA0C61 /* ProfileTwitViewController.m in Sources */,
 				6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,
-				603768341D5D98E800C9BC3B /* PlacesMO.m in Sources */,
 				60505B201D544CD6004BC2BF /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

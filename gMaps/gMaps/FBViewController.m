@@ -57,49 +57,4 @@
     }
 }
 
-//- (IBAction)btnFacebookPressed:(id)sender {
-//    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-//    [login logInWithReadPermissions:@[@"email"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error)
-//     {
-//         if (error)
-//         {
-//             // Process error
-//         }
-//         else if (result.isCancelled)
-//         {
-//             // Handle cancellations
-//         }
-//         else
-//         {
-//             if ([result.grantedPermissions containsObject:@"email"])
-//             {
-//                 NSLog(@"result is:%@",result);
-//                 [self fetchUserInfo];
-//             }
-//         }
-//     }];
-//}
-//
-//-(void)fetchUserInfo
-//{
-//    if ([FBSDKAccessToken currentAccessToken])
-//    {
-//    
-//        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
-//         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-//             if (!error)
-//             {
-//                 NSLog(@"resultis:%@",result);
-//             }
-//             else
-//             {
-//                 NSLog(@"Error %@",error);
-//             }
-//         }];
-//        
-//    }
-//    
-//}
-
-
 @end

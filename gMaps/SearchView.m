@@ -16,10 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self searchTweets:@"olympics"];
-    [TWTRMoPubNativeAdContainerView appearance].theme = TWTRNativeAdThemeDark;
-    
+    [self searchTweets:@""];
     // Do any additional setup after loading the view.
 }
 

@@ -19,7 +19,7 @@
                     <view key="view" contentMode="scaleToFill" id="E8M-TN-gLQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="Ibm-zc-uXi" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="yJo-1G-3om"/>
@@ -634,7 +634,7 @@
         <image name="twit.png" width="1500" height="1500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lMp-jD-hTe"/>
+        <segue reference="yJo-1G-3om"/>
         <segue reference="WEE-YR-Adv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
