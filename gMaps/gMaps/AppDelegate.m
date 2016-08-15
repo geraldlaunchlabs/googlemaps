@@ -13,6 +13,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import <Fabric/Fabric.h>
+#import <Stripe/Stripe.h>
+
 
 
 @interface AppDelegate ()
@@ -33,7 +36,12 @@ NSString *APIKey = @"AIzaSyD4tNWj_YczPH2riZWVLz_ZNiNGX5yxCkw";
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-    [Fabric with:@[[Twitter class]]];
+    [Fabric with:@[[STPAPIClient class], [Twitter class]]];
+    
+    // TODO: Replace with your own test publishable key
+    // TODO: DEBUG ONLY! Remove / conditionalize before launch
+    [Stripe setDefaultPublishableKey:@"pk_test_nlKtc49TquS7AB93x6rXTSdV"];
+
     
     // Override point for customization after application launch.
     return YES;

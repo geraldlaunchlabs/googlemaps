@@ -72,6 +72,10 @@
 		605A02BA1D589BE300B48C50 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A02B91D589BE300B48C50 /* MobileCoreServices.framework */; };
 		605A02BC1D589BED00B48C50 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A02BB1D589BED00B48C50 /* PassKit.framework */; };
 		605A02BE1D589BF500B48C50 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A02BD1D589BF500B48C50 /* Social.framework */; };
+		60696A221D61650A003D96EB /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60696A201D61650A003D96EB /* Stripe.framework */; };
+		60696A231D61650A003D96EB /* Stripe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60696A211D61650A003D96EB /* Stripe.bundle */; };
+		60696A251D61911D003D96EB /* stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 60696A241D61911D003D96EB /* stripe.png */; };
+		60696A2B1D6197DF003D96EB /* StripeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60696A2A1D6197DF003D96EB /* StripeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +176,11 @@
 		605A02B91D589BE300B48C50 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		605A02BB1D589BED00B48C50 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		605A02BD1D589BF500B48C50 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		60696A201D61650A003D96EB /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
+		60696A211D61650A003D96EB /* Stripe.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Stripe.bundle; path = Stripe.framework/Stripe.bundle; sourceTree = "<group>"; };
+		60696A241D61911D003D96EB /* stripe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripe.png; sourceTree = "<group>"; };
+		60696A291D6197DF003D96EB /* StripeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StripeViewController.h; path = ../StripeViewController.h; sourceTree = "<group>"; };
+		60696A2A1D6197DF003D96EB /* StripeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StripeViewController.m; path = ../StripeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +191,7 @@
 				605A02B61D589BCD00B48C50 /* iAd.framework in Frameworks */,
 				605A02B41D589BC400B48C50 /* AVFoundation.framework in Frameworks */,
 				605A02B21D589BB900B48C50 /* AudioToolbox.framework in Frameworks */,
+				60696A221D61650A003D96EB /* Stripe.framework in Frameworks */,
 				6038F38C1D52F82900E69954 /* CoreData.framework in Frameworks */,
 				605A02BE1D589BF500B48C50 /* Social.framework in Frameworks */,
 				603114341D5C213C00BA0C61 /* TwitterKit.framework in Frameworks */,
@@ -241,6 +251,8 @@
 		6038F3421D52F1C400E69954 = {
 			isa = PBXGroup;
 			children = (
+				60696A201D61650A003D96EB /* Stripe.framework */,
+				60696A211D61650A003D96EB /* Stripe.bundle */,
 				6031142F1D5C213C00BA0C61 /* Fabric.framework */,
 				603114301D5C213C00BA0C61 /* TwitterKit.framework */,
 				603114311D5C213C00BA0C61 /* TwitterKitResources.bundle */,
@@ -289,6 +301,8 @@
 				603114381D5C548E00BA0C61 /* ProfileTwitViewController.m */,
 				6031143D1D5C8DE900BA0C61 /* SearchView.h */,
 				6031143E1D5C8DE900BA0C61 /* SearchView.m */,
+				60696A291D6197DF003D96EB /* StripeViewController.h */,
+				60696A2A1D6197DF003D96EB /* StripeViewController.m */,
 				6038F3571D52F1C400E69954 /* Main.storyboard */,
 				6038F35C1D52F1C400E69954 /* LaunchScreen.storyboard */,
 				6038F35A1D52F1C400E69954 /* Assets.xcassets */,
@@ -369,6 +383,7 @@
 		605275281D59864E007790FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				60696A241D61911D003D96EB /* stripe.png */,
 				6038F3A31D53365100E69954 /* AppleUSA1.png */,
 				60505B251D547061004BC2BF /* fb.png */,
 				60505B271D5477D1004BC2BF /* gMaps.png */,
@@ -494,6 +509,7 @@
 			files = (
 				6038F3A41D53365100E69954 /* AppleUSA1.png in Resources */,
 				605A02A21D589AD000B48C50 /* MoPubSDK in Resources */,
+				60696A231D61650A003D96EB /* Stripe.bundle in Resources */,
 				603114351D5C213C00BA0C61 /* TwitterKitResources.bundle in Resources */,
 				60505B261D547061004BC2BF /* fb.png in Resources */,
 				6038F35E1D52F1C400E69954 /* LaunchScreen.storyboard in Resources */,
@@ -504,6 +520,7 @@
 				60505B341D54A6F6004BC2BF /* GooglePlaces.bundle in Resources */,
 				605A02A01D58959200B48C50 /* twit.png in Resources */,
 				60505B361D54A74B004BC2BF /* GooglePlacePicker.bundle in Resources */,
+				60696A251D61911D003D96EB /* stripe.png in Resources */,
 				6038F3881D52F78300E69954 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,6 +569,7 @@
 				6052752C1D598EA2007790FD /* Model.xcdatamodeld in Sources */,
 				6052752F1D59E496007790FD /* ProfileFBViewController.m in Sources */,
 				60505B241D5458D3004BC2BF /* NavigationViewController.m in Sources */,
+				60696A2B1D6197DF003D96EB /* StripeViewController.m in Sources */,
 				603114391D5C548E00BA0C61 /* ProfileTwitViewController.m in Sources */,
 				6033CD231D5B0D1C00A0F2A0 /* TwitViewController.m in Sources */,
 				6038F3501D52F1C400E69954 /* main.m in Sources */,

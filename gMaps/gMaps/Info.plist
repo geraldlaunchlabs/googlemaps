@@ -46,6 +46,15 @@
 				<key>KitName</key>
 				<string>Twitter</string>
 			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>publishable</key>
+					<string>pk_live_qGGkJUz6rPWdwsMabVpbZKJB</string>
+				</dict>
+				<key>KitName</key>
+				<string>STPAPIClient</string>
+			</dict>
 		</array>
 	</dict>
 	<key>FacebookAppID</key>
