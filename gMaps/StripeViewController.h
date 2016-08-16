@@ -25,5 +25,6 @@
 - (IBAction)onChangeDate:(id)sender;
 - (IBAction)onChangeCVC:(id)sender;
 - (IBAction)submit:(id)sender;
+- (IBAction)primary:(id)sender;
 
 @end

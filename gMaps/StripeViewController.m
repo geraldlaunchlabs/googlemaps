@@ -64,8 +64,14 @@
         [self.CVC becomeFirstResponder];
         [self fieldsFilledUp:self.CVC];
     }
+    else if(self.date.text.length ==1 && [self.date.text substringWithRange:NSMakeRange(0,1)].longLongValue > 1) {
+        self.date.text = [NSString stringWithFormat:@"0%@/",self.date.text];
+        
+    }
     else if(self.date.text.length == 2) {
-        if(prevLength<self.date.text.length)
+        if([self.date.text substringWithRange:NSMakeRange(0,2)].longLongValue > 12)
+            self.date.text = [self.date.text substringToIndex:[self.date.text length]-1];
+        else if(prevLength<self.date.text.length)
             self.date.text = [NSString stringWithFormat:@"%@/",self.date.text];
         else
             self.date.text = [self.date.text substringToIndex:[self.date.text length]-1];
@@ -106,16 +112,21 @@
     [[STPAPIClient sharedClient]
      createTokenWithCard:card
      completion:^(STPToken *token, NSError *error) {
+         NSString *alertTitle, *alertMsg;
          if (token) {
+             alertTitle = @"Welcome to Stripe";
+             alertMsg = [NSString stringWithFormat:@"Token created: %@",token];
              // TODO: send the token to your server so it can create a charge
-             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welcome to Stripe"
-                                                                            message:[NSString stringWithFormat:@"Token created: %@", token]
-                                                                     preferredStyle:UIAlertControllerStyleAlert];
-             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-             [self presentViewController:alert animated:YES completion:nil];
+             
          } else {
-             NSLog(@"Error creating token: %@", error.localizedDescription);
+             alertTitle = @"Error Creating Token";
+             alertMsg =  [NSString stringWithFormat:@"%@",error.localizedDescription];
          }
+         UIAlertController* alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                        message:alertMsg
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+         [self presentViewController:alert animated:YES completion:nil];
      }];
     NSLog(@"cardNum: %@",card.number);
     NSLog(@"Month: %lu",card.expMonth);
